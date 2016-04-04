@@ -34,12 +34,12 @@ public class AmdahlCalculator {
 					break;
 					
 				case 2:
-					System.out.print("Enter the serial (from 0 to 1):");
+					System.out.print("Enter B (from 0 to 1):");
 					serial=sc.nextFloat();
 					System.out.print("Enter the number of threads:");
 					threads=sc.nextFloat();
 					speedup=(threads/((serial*threads) + 1-serial ));
-					System.out.println("Speed up:" + speedup);
+					System.out.println("Speed up factor:" + speedup);
 					break;
 			}
 		}
