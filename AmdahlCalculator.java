@@ -4,15 +4,15 @@ public class AmdahlCalculator {
 		
 		int choice=0;
 		float speedup = 0f;
-		float threads = 0f;
+		float cores = 0f;
 		float serial;
 		
 		System.out.println("IS303 Calculator. Use at your own risk.");
 		while (choice !=3) {
 			System.out.println();
 			System.out.println("What do you have for me?");
-			System.out.println("1) Speedup and n (number of threads)"); 
-			System.out.println("2) B (% serial) and n (number of threads)"); 
+			System.out.println("1) Speedup and n (number of cores)"); 
+			System.out.println("2) B (% serial) and n (number of cores)"); 
 			System.out.println("3) Leave"); 
 			System.out.println();
 			System.out.print("Please enter a choice:");
@@ -22,9 +22,9 @@ public class AmdahlCalculator {
 				case 1:
 					System.out.print("Enter the speed up factor:");
 					speedup=sc.nextFloat();
-					System.out.print("Enter the number of threads:");
-					threads=sc.nextFloat();
-					serial=((threads/speedup-1)/(threads-1));
+					System.out.print("Enter the number of cores:");
+					cores=sc.nextFloat();
+					serial=((cores/speedup-1)/(cores-1));
 					System.out.println(".");
 					System.out.println(".");
 					System.out.println(".");
@@ -36,9 +36,9 @@ public class AmdahlCalculator {
 				case 2:
 					System.out.print("Enter B (from 0 to 1):");
 					serial=sc.nextFloat();
-					System.out.print("Enter the number of threads:");
-					threads=sc.nextFloat();
-					speedup=(threads/((serial*threads) + 1-serial ));
+					System.out.print("Enter the number of cores:");
+					cores=sc.nextFloat();
+					speedup=(cores/((serial*cores) + 1-serial ));
 					System.out.println("Speed up factor:" + speedup);
 					break;
 			}
